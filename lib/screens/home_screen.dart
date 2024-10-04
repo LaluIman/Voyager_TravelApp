@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:travel_app/model/place.dart';
-import 'package:travel_app/screens/detail_screen.dart';
+import 'package:travel_app/widget/allList.dart';
 import 'package:travel_app/widget/journey_scroll.dart';
 import 'package:travel_app/widget/popular_widget.dart';
 
@@ -174,60 +173,7 @@ class HomeScreen extends StatelessWidget {
           
               SizedBox(height: 20),
           
-              ListView.builder(
-                primary: false,
-                shrinkWrap: true,
-                physics: NeverScrollableScrollPhysics(),
-                itemCount: wonderfulPlacesList.length,
-                itemBuilder: (context, index){
-                  final WonderfulPlace place = wonderfulPlacesList[index];
-                  return InkWell(
-                    onTap: (){
-                      Navigator.push(context, MaterialPageRoute(builder: (context) {
-                        return DetailScreen(place: place,);
-                    }));
-                    },
-                    child: Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: Column(children: [
-                        Container(
-                          width: double.infinity,
-                          height: 230,
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(25),
-                            image: DecorationImage(image: AssetImage(place.image), fit: BoxFit.cover)
-                          ),
-                          child: Column(
-                            mainAxisAlignment: MainAxisAlignment.end,
-                            children: [
-                              Padding(
-                                padding: const EdgeInsets.all(15),
-                                child: Container(
-                                  padding: const EdgeInsets.all(10),
-                                  decoration: BoxDecoration(
-                                    color: Colors.white.withOpacity(0.9),
-                                    borderRadius: BorderRadius.circular(15)
-                                  ),
-                                  child: Row(
-                                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                    children: [
-                                      Text(place.name, style: TextStyle(fontSize: 15, fontWeight: FontWeight.w600),),
-                                      Row(children: [
-                                        Icon(Icons.place),
-                                        Text(place.location)
-                                      ],)
-                                    ],
-                                  ),
-                                ),
-                              )
-                            ],
-                          ),
-                        ),
-                      ],),
-                    ),
-                  );
-                },
-              )
+              allListView()
             ],
           ),
         ),

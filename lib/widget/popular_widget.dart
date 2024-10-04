@@ -80,9 +80,9 @@ class popularWidget extends StatelessWidget {
                             ),
                           ),
                           ],),
-      
+                            
                         SizedBox(height: 5),
-      
+                            
                           Container(
                             padding: EdgeInsets.symmetric(horizontal: 10, vertical: 3),
                             decoration: BoxDecoration(

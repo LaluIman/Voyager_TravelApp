@@ -14,35 +14,30 @@ class WelcomeScreen extends StatelessWidget {
           child: Column(children: [
             Image.asset("assets/images/welcome.png"),
 
+            Image.asset("assets/images/Mountain.png", opacity: const AlwaysStoppedAnimation(0.5)),
+
             Text("Voyager", style: TextStyle(
               fontSize: 35,
               fontWeight: FontWeight.w700,
               color: Color(0xFF418B70)
             ),),
-
-
+            
             SizedBox(
-              height: 30,
+              height: 15,
             ),
           
             Text("Easy way to explore", style: TextStyle(
-              fontSize: 30,
+              fontSize: 25,
               fontWeight: FontWeight.w600,
             ),),
             Text("and book a flight", style: TextStyle(
-              fontSize: 30,
-              fontWeight: FontWeight.w500,
+              fontSize: 25,
+              fontWeight: FontWeight.w400,
             ),),
           
             SizedBox(
               height: 10,
             ),
-          
-            Text("and many more!", style: TextStyle(
-              fontSize: 20,
-              color: Colors.grey,
-              fontWeight: FontWeight.w600,
-            ),),
                   
                   
             Spacer(),
