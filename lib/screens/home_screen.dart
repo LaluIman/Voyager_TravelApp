@@ -14,46 +14,41 @@ class HomeScreen extends StatelessWidget {
         child: SingleChildScrollView(
           child: Column(
             children: [
-          
               SizedBox(
                 width: double.infinity,
                 child: Container(
                   decoration: BoxDecoration(
-                    image: DecorationImage(
-                      image: AssetImage("assets/images/Mountain.png"), 
-                      fit: BoxFit.cover,
-                      opacity: 0.2
-                    )
-                  ),
+                      image: DecorationImage(
+                          image: AssetImage("assets/images/Mountain.png"),
+                          fit: BoxFit.cover,
+                          opacity: 0.2)),
                   child: Padding(
                     padding: const EdgeInsets.all(10),
-                    child: Text("Voyager", style: TextStyle(
-                      fontSize: 30,
-                      fontWeight: FontWeight.w700,
-                      color: Color(0xFF418B70)
-                    ),
-                    textAlign: TextAlign.center,
+                    child: Text(
+                      "Voyager",
+                      style: TextStyle(
+                          fontSize: 30,
+                          fontWeight: FontWeight.w700,
+                          color: Color(0xFF418B70)),
+                      textAlign: TextAlign.center,
                     ),
                   ),
                 ),
               ),
-          
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 10),
                 child: Container(
                   padding: EdgeInsets.all(5),
                   decoration: BoxDecoration(
-                    color: Color(0xFFF3F3F3),
-                    borderRadius: BorderRadius.circular(25)
-                  ),
+                      color: Color(0xFFF3F3F3),
+                      borderRadius: BorderRadius.circular(25)),
                   child: Row(
                     children: [
                       Expanded(
                         child: Container(
                           decoration: BoxDecoration(
-                            color: Colors.white,
-                            borderRadius: BorderRadius.circular(20)
-                          ),
+                              color: Colors.white,
+                              borderRadius: BorderRadius.circular(20)),
                           child: TextField(
                             decoration: InputDecoration(
                               border: InputBorder.none,
@@ -69,18 +64,17 @@ class HomeScreen extends StatelessWidget {
                       Container(
                         padding: EdgeInsets.all(10),
                         decoration: BoxDecoration(
-                          color: Colors.white,
-                          shape: BoxShape.circle
+                            color: Colors.white, shape: BoxShape.circle),
+                        child: Icon(
+                          Icons.sort_rounded,
+                          color: Color(0xFF418B70),
                         ),
-                        child: Icon(Icons.sort_rounded, color: Color(0xFF418B70),),
                       )
                     ],
                   ),
                 ),
               ),
-              
               SizedBox(height: 20),
-          
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 10),
                 child: SizedBox(
@@ -91,30 +85,20 @@ class HomeScreen extends StatelessWidget {
                       Text(
                         "Begin your journey",
                         style: TextStyle(
-                          fontSize: 20, 
-                          fontWeight: FontWeight.w600
-                        ),
-                        
+                            fontSize: 20, fontWeight: FontWeight.w600),
                       ),
                       Text(
                         "See all continent around the world",
                         style: TextStyle(
-                          fontSize: 15, 
-                          fontWeight: FontWeight.w400
-                        ),
-                        
+                            fontSize: 15, fontWeight: FontWeight.w400),
                       ),
                     ],
                   ),
                 ),
               ),
-          
               SizedBox(height: 10),
-          
               JourneyScroll(),
-          
               SizedBox(height: 20),
-          
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 10),
                 child: Row(
@@ -122,28 +106,19 @@ class HomeScreen extends StatelessWidget {
                   children: [
                     Text(
                       "See popular places",
-                      style: TextStyle(
-                        fontSize: 20, 
-                        fontWeight: FontWeight.w600
-                      ),
+                      style:
+                          TextStyle(fontSize: 20, fontWeight: FontWeight.w600),
                     ),
                     Text(
                       "See all",
-                      style: TextStyle(
-                        fontSize: 15,
-                        color: Color(0xFF418B70)
-                      ),
+                      style: TextStyle(fontSize: 15, color: Color(0xFF418B70)),
                     ),
                   ],
                 ),
               ),
-          
               SizedBox(height: 20),
-          
               popularWidget(),
-          
               SizedBox(height: 20),
-          
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 10),
                 child: SizedBox(
@@ -154,43 +129,49 @@ class HomeScreen extends StatelessWidget {
                       Text(
                         "See other place!",
                         style: TextStyle(
-                          fontSize: 20, 
-                          fontWeight: FontWeight.w600
-                        ),
-                        
+                            fontSize: 20, fontWeight: FontWeight.w600),
                       ),
                       Text(
                         "Discover places that fit for you!",
                         style: TextStyle(
-                          fontSize: 15, 
-                          fontWeight: FontWeight.w400
-                        ),
+                            fontSize: 15, fontWeight: FontWeight.w400),
                       ),
                     ],
                   ),
                 ),
               ),
-          
               SizedBox(height: 20),
-          
               allListView()
             ],
           ),
         ),
       ),
       bottomNavigationBar: BottomNavigationBar(
-        backgroundColor: Colors.white,
-        type: BottomNavigationBarType.fixed,
-        fixedColor: Color(0xFF418B70),
-        currentIndex: 0,
-        unselectedItemColor: Colors.black,
-        items: [
-          BottomNavigationBarItem(icon: Icon(Icons.home_rounded, size: 30,), label: 'Home'),
-          BottomNavigationBarItem(icon: Icon(Icons.map, size: 30,), label: 'Explore'),
-          BottomNavigationBarItem(icon: Icon(Icons.favorite, size: 30,), label: 'Favorite'),
-        ]
-          ),
+          backgroundColor: Colors.white,
+          type: BottomNavigationBarType.fixed,
+          fixedColor: Color(0xFF418B70),
+          currentIndex: 0,
+          unselectedItemColor: Colors.black,
+          items: [
+            BottomNavigationBarItem(
+                icon: Icon(
+                  Icons.home_rounded,
+                  size: 30,
+                ),
+                label: 'Home'),
+            BottomNavigationBarItem(
+                icon: Icon(
+                  Icons.map,
+                  size: 30,
+                ),
+                label: 'Explore'),
+            BottomNavigationBarItem(
+                icon: Icon(
+                  Icons.favorite,
+                  size: 30,
+                ),
+                label: 'Favorite'),
+          ]),
     );
   }
 }
-

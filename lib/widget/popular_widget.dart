@@ -21,7 +21,9 @@ class popularWidget extends StatelessWidget {
             return InkWell(
               onTap: () {
                 Navigator.push(context, MaterialPageRoute(builder: (context) {
-                        return DetailScreen(place: place,);
+                  return DetailScreen(
+                    place: place,
+                  );
                 }));
               },
               child: Container(
@@ -29,7 +31,7 @@ class popularWidget extends StatelessWidget {
                 width: 170,
                 decoration: BoxDecoration(
                   image: DecorationImage(
-                   image: AssetImage(place.image),
+                    image: AssetImage(place.image),
                     fit: BoxFit.cover,
                   ),
                   borderRadius: BorderRadius.circular(20),
@@ -63,49 +65,51 @@ class popularWidget extends StatelessWidget {
                               color: Colors.white,
                               fontWeight: FontWeight.w600,
                               fontSize: 14,
+                              
                             ),
                           ),
                           Row(
                             children: [
-                            Icon(Icons.place_outlined, 
-                              color: Colors.white,
-                              size: 15,
-                            ),
-                            Text(
-                            place.location,
-                            style: TextStyle(
-                              color: Colors.white,
-                              fontWeight: FontWeight.bold,
-                              fontSize: 12,
-                            ),
-                          ),
-                          ],),
-                            
-                        SizedBox(height: 5),
-                            
-                          Container(
-                            padding: EdgeInsets.symmetric(horizontal: 10, vertical: 3),
-                            decoration: BoxDecoration(
-                              color: Color(0xFF418B70),
-                              borderRadius: BorderRadius.circular(20)
-                            ),
-                            child: Row(
-                              children: [
-                              Icon(Icons.star, 
-                                color: Colors.yellow,
+                              Icon(
+                                Icons.place_outlined,
+                                color: Colors.white,
                                 size: 15,
                               ),
                               Text(
-                              place.rating,
-                              style: TextStyle(
-                                color: Colors.white,
-                                fontWeight: FontWeight.bold,
-                                fontSize: 12,
+                                place.location,
+                                style: TextStyle(
+                                  color: Colors.white,
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 12,
+                                ),
                               ),
+                            ],
+                          ),
+                          SizedBox(height: 5),
+                          Container(
+                            padding: EdgeInsets.symmetric(
+                                horizontal: 10, vertical: 3),
+                            decoration: BoxDecoration(
+                                color: Color(0xFF418B70),
+                                borderRadius: BorderRadius.circular(20)),
+                            child: Row(
+                              children: [
+                                Icon(
+                                  Icons.star,
+                                  color: Colors.yellow,
+                                  size: 15,
+                                ),
+                                Text(
+                                  place.rating,
+                                  style: TextStyle(
+                                    color: Colors.white,
+                                    fontWeight: FontWeight.bold,
+                                    fontSize: 12,
+                                  ),
+                                ),
+                              ],
                             ),
-                            ],),
                           )
-                          
                         ],
                       ),
                     ),
@@ -119,5 +123,3 @@ class popularWidget extends StatelessWidget {
     );
   }
 }
-
-
